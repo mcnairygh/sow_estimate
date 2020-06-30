@@ -1,0 +1,390 @@
+<html>
+<head> <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+ 
+ 
+
+
+	<title>SOW Estimation</title>
+	
+	<style>
+* {
+  box-sizing: border-box;
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-10,.col-25,.col-50, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+th, td {
+  text-align: left;
+  padding: 16px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+</style>
+</head>
+
+<body>
+    
+    <div class="topnav" id="myTopnav">
+  <a href="epic_search.html"  >EPIC Search</a>
+  <a href="sow_search.html"  >SOW Search</a>
+  <a href="crt_estimate.html" class="active">Estimate SOW</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+<div style="padding-left:16px">
+  <h2>Responsive Topnav Example</h2>
+  <p>Resize the browser window to see how it works.</p>
+</div>
+<div class="container">
+<!-- Leftside -->
+ 
+    <div class="row">
+    
+        <div   id="addepic">
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+        
+        <div class="modal-dialog">
+    
+        <!-- Modal content-->
+        <div class="modal-content" style="padding:5px">
+        
+        
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+           
+        <div class="modal-body">
+            <form >
+                    
+                    <div class="form-group">
+                        <label for="ename">Epic Name</label>
+                        <input type="text" id="newname" name="epicname" placeholder="Epic name..">
+                        <label for="eacceptance">Acceptance Criteria:</label>
+                        <textarea id="newacceptance" name="eacceptance" placeholder="Input Acceptance Criteria.." style="height:200px"></textarea>
+                    </div>
+                
+                    <div class="form-group" >
+                        <div class="col-md m1 w3-padding"  ><label>Min. Stories</label><input type="text" id="newminstories" name="eminstories" placeholder="01"></div>
+                        <div class="col-md m1 w3-padding"  ><label>Max. Stories</label><input type="text" id="newmaxstories" name="emaxstories" placeholder="01"></div>
+                        <div class="col-md m3 w3-padding" id="addtorow" ><label>&nbsp; </label> <input type="button" value="Add Epic SOW"></div>
+                    </div>
+                
+            </form>
+            <button id="hide" style="margin:10px">Cancel</button>
+        </div> <!-- body -->
+        
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+        
+        </div> <!-- end content -->
+    
+    </div> <!-- END Dialog -->
+    </div> <!-- END Dialog -->
+
+        </div> <!-- END ADD -->
+    </div> <!-- END ROW -->
+  
+ <!-- SOW Estimate -->
+ 
+    <div class="row">
+           
+        <div class="col-lg-12  w3-center w3-grey">
+                    <h2>SOW Estimate</h2>
+                    
+                    
+                      <div  style="float:left;margin:5px"><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Add Epic</button></div>
+                      
+                    <form class="form-inline" action="">
+                    
+                    <div class="form-group " >
+                        
+                            <label> SOW ID</label><input class="form-control" id="ex1"  type="text" value="McNairy-20-03-01"> 
+                             <label> Team Size</label><input class="form-control" id="ex1" type="number" value=2> 
+                             <label>  User Story Avg. per Sprint</label><input class="form-control" id="ex1" type="number" value="2.5">   
+                       
+                    </div>
+    
+                    
+                     <div class="col-lg-12" style="padding:30px">
+                        
+                            <h2  style="background-color:black;color:white;padding:10px;">Engagement Planned Forecast:</h2> 
+                        
+                            <div class="form-group " style="margin-top:10px" >
+          
+                                <label> Planned Start Date:</label><input class="form-control" id="ex1" type="date"  >  
+                                 
+                                <label> Agressive End Date:</label><input  class="form-control" id="ex1" type="date"  > 
+                                 <label> Conservative End Date:</label><input  class="form-control" id="ex1" type="date"  >  
+                            </div>
+                    </div>
+            </div>
+    </div>
+
+
+
+    <div class="row">   
+                    <div class="col-lg-12" style="padding:30px">
+                            <h2 style="background-color:black;color:white;padding:10px">Attune Forecasted Cost:</h2>
+    
+                            <div class="form-group "  style="margin-top:10px">
+                           <label> Bi-Weekly Invoice. Amt</label><input class="form-control" id="ex1" type="number" value="20000">
+                           <label> Aggressive Est.</label><input class="form-control" id="ex1" type="number" value="160000"> 
+                           <label> Conservative Est.</label><input class="form-control" id="ex1" type="number" value="240000">  
+                           </div>
+                        </div>
+    </div> <!-- end row -->
+    
+    <div class="row" style="padding:30px">
+                     <h2 style="background-color:black;color:white;padding:10px">Assessment Forecasted Cost:</h2>
+
+                    <div class="row form-group  " >
+                      
+                      <label> Assessment Required:</label><input type="radio" name="assessmentrequired" value="0"> Yes  &nbsp; <input type="radio" name="assessmentrequired" value="1"> No  
+                
+                     |&nbsp; <label> Duration (Weeks):</label> <input class="form-control" id="ex1" type="number" value=2>
+                    </div>
+ 
+                    
+                    <div class="form-group">
+                      <label><b> Assessment Charge:</b></label><input class="form-control" id="ex1"  type="number" value="200000"> 
+                     
+                   
+                      <label>Cost Per Week:</label><input class="form-control" id="ex1"  type="number" value="10000">  
+                    </div>
+     </div>
+      
+    <div class="row" style="padding:30px">
+                     <h2 style="background-color:black;color:white;padding:10px">Total Engagement Cost:</h2>
+                      <p>* Attune Cost + Assessment Cost = Total Cost *</p>
+                   
+ 
+                    
+                    <div class="form-group">
+                      <label><b> Conservatve Total:</b></label><input class="form-control" id="ex1"  type="number" value="200000"> 
+                     
+                   
+                      <label>Aggressive Total:</label><input class="form-control" id="ex1"  type="number" value="10000">  
+                    </div>
+      </div>        
+         
+      
+                    <div class="row "> 
+                        <div id="epicwrapper">
+            
+                        </div>
+                     </div>
+        
+<!-- end estimate -->
+              
+
+        <div class="row w3-grey" >
+        <div class="w3-center"><a style="color:red;font-weight:bold" href="www.mcnairyconsultingsvcs.com">McNairy Consulting Svcs</a></div>
+        </div>
+ 
+        <!-- end container -->      
+        
+<script>
+$(document).ready(function(){
+    var epiccount = 0;
+    var removeid =' '; 
+      
+        $("#hide").click(function(){
+        $("#addepic").hide();
+        });
+      
+        $("#show").click(function(){
+        $("#addepic").show();
+        });
+        
+        
+        $('body').on('click', function(e){
+            var x = e.target.id;
+           var y = document.getElementById(x).className;
+       // alert(e.target.id +' '+ y); 
+        
+        classepic = "."+y;
+        //alert(classepic); 
+        $(classepic).remove();
+        });
+    
+
+       $("#addtorow").click(function(){
+        var epiccountz = epiccount + 1;
+        var epiccountid = 'id="REMOVE'+epiccountz+'"';
+        var epiccountclass = 'EPIC'+epiccountz;
+        var epiccountclassd = 'class="EPIC'+epiccountz+'"';
+        var epicnameidn = '#epicname'+epiccountz;
+        var epicnameid = 'id="epicname'+epiccountz+'"';
+        
+        //alert(epicnameid);
+        var epicaccpidn = '#epicaccp'+epiccountz;
+        var epicaccpid = 'id="epicaccp'+epiccountz+'"';
+        var epicminsidn = '#epicmins'+epiccountz;
+        var epicminsid = 'id="epicmins'+epiccountz+'"';
+        var epicmaxsidn = '#epicmaxs'+epiccountz;
+        var epicmaxsid = 'id="epicmaxs'+epiccountz+'"';
+        
+        
+        var addline0 ='<div class="row '+ epiccountclass +' ">' ;  
+      
+        var addline1 =' <div class="col-sm-3"><button id="eedit"> Edit </button> <button  ' + epiccountclassd + epiccountid  +' > Remove </button>  </div>';
+        var addline2 =' <div class="col-sm-3"><input ' + epicnameid+'  name="epicname" placeholder="Epic Name" > </div>';
+        var addline3 =' <div class="col-sm-3"><textarea ' + epicaccpid+' name="eaccceptance" placeholder="Input Acceptance Criteria.." value="" style="height:100px"></textarea> </div>';
+        var addline4 =' <div class="col-sm-3"><label>Min. Stories</label><input ' + epicminsid+' name="eminstories" placeholder="01" >  ';
+        var addline5 ='<label>Max. Stories</label> <input ' + epicmaxsid+' name="emaxstories" placeholder="10" ></div></div>';
+    
+        var addrow = addline0+addline1+addline2+addline3+addline4+addline5;
+    
+         $("#epicwrapper").append(addrow);
+         
+            $(epicnameidn).val($("#newname").val());
+            $(epicaccpidn).val($("#newacceptance").val());
+            $(epicminsidn).val($("#newminstories").val());
+            $(epicmaxsidn).val($("#newmaxstories").val());
+         
+         
+         epiccount = epiccountz;    
+        });
+    });  
+ 
+ 
+ <script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
+ 
+</script>
+
+</body>
+</html>
