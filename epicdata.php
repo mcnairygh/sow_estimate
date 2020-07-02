@@ -2,8 +2,8 @@
 
 //Epic Data ID,EPIC NAME, EPIC AC, EPIC CAT, Min Stories, Max Stories
 
-myObj = {
-  "epic":{
+epicObj = {
+  "epics":{
    "Create VPC" [
      { "reuse":Y,
        "category":BCF,
