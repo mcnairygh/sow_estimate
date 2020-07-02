@@ -11,8 +11,8 @@ myObj = {
            "ac1":"Feature 1",
            "ac2":"Feature 2",
            "ac3":"Feature 3"
-       }
-       "minstories":5
+       },
+       "minstories":5,
        "maxstories":7
      }],
    "Create Pipeline" [
@@ -21,10 +21,10 @@ myObj = {
        "ac": {
            "ac1":"Feature 1",
            "ac2":"Feature 2",
-           "ac3":"Feature 3"
+           "ac3":"Feature 3",
            "ac4":"Feature 4"
-       }
-       "minstories":7
+       },
+       "minstories":7,
        "maxstories":12
      }]
 
