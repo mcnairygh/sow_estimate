@@ -8,9 +8,9 @@ epicObj = {
      { "reuse":Y,
        "category":BCF,
        "ac": {
-           "ac1":"Feature 1",
-           "ac2":"Feature 2",
-           "ac3":"Feature 3"
+           "ac1":"Create VPC Feature 1",
+           "ac2":"Create VPC Feature 2",
+           "ac3":"Create VPC Feature 3"
        },
        "minstories":5,
        "maxstories":7
@@ -19,10 +19,10 @@ epicObj = {
      { "reuse":Y,
        "category":TFM,
        "ac": {
-           "ac1":"Feature 1",
-           "ac2":"Feature 2",
-           "ac3":"Feature 3",
-           "ac4":"Feature 4"
+           "ac1":"Create Pipeline Feature 1",
+           "ac2":"Create Pipeline Feature 2",
+           "ac3":"Create Pipeline Feature 3",
+           "ac4":"Create Pipeline Feature 4"
        },
        "minstories":7,
        "maxstories":12
