@@ -236,6 +236,27 @@ body {
 </div>
 
 <script>
+ $(document).ready(function(){
+  
+  //load search data 
+  load_epics();
+});
+
+ 
+fucntion load_epics(){
+
+ 
+ var epic_row = '<tr >
+           <td>'+ecategory+'</td>
+           <td>'+ename+'</td>
+           <td>'+eaccept+'</td>
+           <td>'+minstories+'</td>
+           <td>'+maxstories+'</td>
+           </tr>';
+ 
+}
+
+// filter input // 
 function myFunction() {
   var input, filter, table, tr, td, i, txtValue;
   input = document.getElementById("myInput");
