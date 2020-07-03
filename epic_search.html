@@ -245,8 +245,13 @@ body {
  
 function load_epics(){
 
+ var ecategory ="BCF";
+ var ename ="Epic Name";
+ var eaccept = "Feature 1";
+ var eminstories = 1;
+ var emaxstories = 5;
  
- var epic_row = '<tr ><td>'+ecategory+'</td><td>'+ename+'</td><td>'+eaccept+'</td><td>'+minstories+'</td><td>'+maxstories+'</td></tr>';
+ var epic_row = '<tr ><button id="edit_epic" type="button">edit</button><td>'+ecategory+'</td><td>'+ename+'</td><td>'+eaccept+'</td><td>'+eminstories+'</td><td>'+emaxstories+'</td></tr>';
  
 }
 
