@@ -179,7 +179,7 @@ body {
                         <div class="col-md m1 w3-padding"  ><label>Max. Stories</label><input type="text" id="newmaxstories" name="emaxstories" placeholder="01"></div>
                       
                     </div>
-                  <div class="col-md m3 w3-padding" id="addtorow" ><label>&nbsp; </label> <input type="button" value="Add Epic SOW"></div>
+                  <div class="col-md m3 w3-padding" id="addtodb" ><label>&nbsp; </label> <input type="button" value="Add Epic To DB"></div>
             </form>
             <button id="hide" style="margin:10px">Cancel</button>
         </div> <!-- body -->
@@ -247,10 +247,30 @@ body {
   
   //load search data 
   load_epics();
-});
-
+   
+  
+ 
+   $("#addtodb").click(function(){
+    add_epic();
+   });
+ 
+ 
+ });
  
 function load_epics(){
+
+ var ecategory ="BCF";
+ var ename ="Epic Name";
+ var eaccept = "<p>Feature 1</p><br><p>Feature 2</p>";
+ var eminstories = 1;
+ var emaxstories = 5;
+ 
+ var epic_row = '<tr style="vertical-align:top" ><button id="edit_epic" type="button">edit</button><td>'+ecategory+'</td><td>'+ename+'</td><td>'+eaccept+'</td><td>'+eminstories+'</td><td>'+emaxstories+'</td><td><button type="button">Edit</button></td><td><button type="button">Del</button></td> </tr>';
+ $("#myTable").append(epic_row);
+}
+
+ 
+function add_epic(){
 
  var ecategory ="BCF";
  var ename ="Epic Name";
