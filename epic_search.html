@@ -141,7 +141,7 @@ body {
   <a href="epic_search.html" class="active">EPIC Search</a>
   <a href="sow_search.html">SOW Search</a>
   <a href="crt_estimate.html">Estimate SOW</a>
-  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+  <a href="javascript:void(0);" class="icon" onclick="epic_filter()">
     <i class="fa fa-bars"></i>
   </a>
 </div>
@@ -230,7 +230,7 @@ body {
                         <div class="col-md m1 w3-padding"  ><label>Max. Stories</label><input type="text" id="newmaxstories" name="emaxstories" placeholder="01"></div>
                       
                     </div>
-                  <div class="col-md m3 w3-padding"><button class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal2"    id="updEPIC" type="button">Update EPIC </button></div>
+                  <div class="col-md m3 w3-padding"><button class="btn btn-info btn-sm"     id="updEPIC" type="button">Update EPIC </button></div>
             </form>
             <button id="hide2" style="margin:10px">Cancel</button>
         </div> <!-- body -->
@@ -257,7 +257,7 @@ body {
 
              
              
-<input type="text" id="myInput" style="margin-bottom:20px;" onkeyup="myFunction()" placeholder="Search for EPICs by name.." title="Type in a name">
+<input type="text" id="myInput" style="margin-bottom:20px;" onkeyup="epic_filter()" placeholder="Search for EPICs by name.." title="Type in a name">
 
 <table id="myTable">
   <tr class="header">
@@ -303,6 +303,10 @@ body {
    $("#addtodb").click(function(){
     add_epic();
    });
+  
+   $("#edit_epic").click(function(){
+    edit_epic();
+   });
  
  
  });
@@ -332,8 +336,14 @@ function add_epic(){
  $("#myTable").append(epic_row);
 }
 
-// filter input // 
-function myFunction() {
+// Edit Epic // 
+ function epic_edit() {
+   
+  
+ }
+ 
+ // filter input // 
+function epic_filter() {
   var input, filter, table, tr, td, i, txtValue;
   input = document.getElementById("myInput");
   filter = input.value.toUpperCase();
