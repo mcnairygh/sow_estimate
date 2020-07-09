@@ -320,7 +320,8 @@ function load_epics(){
  var eminstories = 1;
  var emaxstories = 5;
  last_epic = last_epic + 1; 
- var epic_row = '<tr style="vertical-align:top"> <button id="'+last_epic+'" type="button">edit</button><td>'+ecategory+'</td><td>'+ename+'</td><td>'+eaccept+'</td><td>'+eminstories+'</td><td>'+emaxstories+'</td><td><button class="edit_btn btn btn-info btn-sm"  type="button">Edit</button></td><td><button class="del_btn btn btn-info btn-sm"  type="button">Del</button></td> </tr>';
+ var last_id = 'id="'+last_epic+'"';
+ var epic_row = '<tr style="vertical-align:top"> <button '+last_id+' type="button">edit</button><td>'+ecategory+'</td><td>'+ename+'</td><td>'+eaccept+'</td><td>'+eminstories+'</td><td>'+emaxstories+'</td><td><button class="edit_btn btn btn-info btn-sm"  type="button">Edit</button></td><td><button class="del_btn btn btn-info btn-sm"  type="button">Del</button></td> </tr>';
  $("#myTable").append(epic_row);
 }
 
@@ -333,7 +334,7 @@ function add_epic(){
  var eminstories = 1;
  var emaxstories = 5;
  
- var epic_row = '<tr style="vertical-align:top" ><button id="'+last_epic+'" type="button">edit</button><td>'+ecategory+'</td><td>'+ename+'</td><td>'+eaccept+'</td><td>'+eminstories+'</td><td>'+emaxstories+'</td><td><button class="edit_btn btn btn-info btn-sm" id="'+last_epic+' type="button">Edit</button></td><td><button class="del_btn btn btn-info btn-sm" id="'+last_epic+' type="button">Del</button></td> </tr>';
+ var epic_row = '<tr style="vertical-align:top" ><button  '+last_id+'  type="button">edit</button><td>'+ecategory+'</td><td>'+ename+'</td><td>'+eaccept+'</td><td>'+eminstories+'</td><td>'+emaxstories+'</td><td><button class="edit_btn btn btn-info btn-sm" id="'+last_epic+' type="button">Edit</button></td><td><button class="del_btn btn btn-info btn-sm"  '+last_id+'  type="button">Del</button></td> </tr>';
  $("#myTable").append(epic_row);
 }
 
