@@ -321,7 +321,7 @@ function load_epics(){
  var emaxstories = 5;
  last_epic = last_epic + 1; 
  var last_id = 'id="'+last_epic+'"';
- var epic_row = '<tr style="vertical-align:top"> <button '+last_id+' type="button">edit</button><td>'+ecategory+'</td><td>'+ename+'</td><td>'+eaccept+'</td><td>'+eminstories+'</td><td>'+emaxstories+'</td><td><button class="edit_btn btn btn-info btn-sm"  type="button">Edit</button></td><td><button class="del_btn btn btn-info btn-sm"  type="button">Del</button></td> </tr>';
+ var epic_row = '<tr style="vertical-align:top"><td>'+ecategory+'</td><td>'+ename+'</td><td>'+eaccept+'</td><td>'+eminstories+'</td><td>'+emaxstories+'</td><td><button class="edit_btn btn btn-info btn-sm" '+last_id+' type="button">Edit</button></td><td><button class="del_btn btn btn-info btn-sm"  type="button">Del</button></td> </tr>';
  $("#myTable").append(epic_row);
 }
 
